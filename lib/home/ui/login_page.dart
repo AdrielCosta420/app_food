@@ -154,7 +154,7 @@ class _LoginPageState extends State<LoginPage> {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(top: 13),
+              padding: const EdgeInsets.only(top: 25, bottom: 15),
               child: Row(
                 children: const [
                   Expanded(
@@ -164,8 +164,8 @@ class _LoginPageState extends State<LoginPage> {
                     color: Colors.black,
                   )),
                   Text(
-                    'OU',
-                    style: TextStyle(fontWeight: FontWeight.bold),
+                    'Faça login com',
+                    style: TextStyle(fontWeight: FontWeight.w700, fontSize: 17),
                   ),
                   Expanded(
                     child: Divider(
