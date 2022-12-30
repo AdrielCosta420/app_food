@@ -12,11 +12,36 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(toolbarHeight: 0),
+      backgroundColor: Colors.white,
+      /* appBar: AppBar(
+        actions: const [
+          Icon(
+            Icons.location_on_outlined,
+            color: Colors.green,
+            size: 35,
+          ),
+        ],
+        shadowColor: Colors.white,
+        elevation: 0,
+      ),*/
+      floatingActionButtonLocation: FloatingActionButtonLocation.endTop,
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.white,
+        elevation: 0,
+        onPressed: () {},
+        child: const Icon(
+          Icons.location_on_outlined,
+          color: Color.fromARGB(255, 8, 218, 15),
+          size: 35,
+        ),
+      ),
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
+            const SizedBox(
+              height: 35,
+            ),
             SizedBox(
               width: MediaQuery.of(context).size.width,
               height: 300,
@@ -25,7 +50,7 @@ class _LoginPageState extends State<LoginPage> {
             Text(
               'LOGIN',
               style: GoogleFonts.notoSansWarangCiti(
-                fontSize: 30,
+                fontSize: 20,
                 fontWeight: FontWeight.bold,
               ),
             ),
@@ -33,32 +58,78 @@ class _LoginPageState extends State<LoginPage> {
               padding: const EdgeInsets.only(
                   left: 45, right: 45, bottom: 20, top: 20),
               child: TextFormField(
+                textAlign: TextAlign.center,
                 decoration: InputDecoration(
-                  label: Center(
-                      child: Text(
-                    'USUÁRIO',
-                    style: GoogleFonts.notoSansWarangCiti(fontSize: 20),
-                  )),
+                  filled: true,
+                  fillColor: const Color.fromARGB(248, 243, 239, 239),
+                  label: SizedBox(
+                    width: double.infinity,
+                    child: Text(
+                      'Usuário',
+                      textAlign: TextAlign.center,
+                      style: GoogleFonts.notoSansWarangCiti(
+                        fontSize: 20,
+                        color: Colors.black87,
+                      ),
+                    ),
+                  ),
+                  floatingLabelBehavior: FloatingLabelBehavior.never,
                   border: OutlineInputBorder(
+                    gapPadding: 20,
                     borderRadius: BorderRadius.circular(10),
+                    borderSide: const BorderSide(
+                      color: Color.fromARGB(115, 158, 158, 158),
+                    ),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10),
+                    borderSide: const BorderSide(
+                      color: Colors.blue,
+                    ),
+                  ),
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10),
+                    borderSide: const BorderSide(
+                      color: Color.fromARGB(115, 158, 158, 158),
+                    ),
                   ),
                 ),
               ),
             ),
             Padding(
               padding: const EdgeInsets.only(
-                  left: 45, right: 45, bottom: 20, top: 20),
+                  left: 45, right: 45, bottom: 20, top: 5),
               child: TextFormField(
                 decoration: InputDecoration(
+                  filled: true,
+                  fillColor: const Color.fromARGB(248, 243, 239, 239),
                   label: Center(
                     child: Text(
-                      'SENHA',
+                      'Senha',
                       textDirection: TextDirection.rtl,
-                      style: GoogleFonts.notoSansWarangCiti(fontSize: 20),
+                      style: GoogleFonts.notoSansWarangCiti(
+                          fontSize: 20, color: Colors.black87),
                     ),
                   ),
+                  floatingLabelBehavior: FloatingLabelBehavior.never,
                   border: OutlineInputBorder(
+                    gapPadding: 20,
                     borderRadius: BorderRadius.circular(10),
+                    borderSide: const BorderSide(
+                      color: Color.fromARGB(115, 158, 158, 158),
+                    ),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10),
+                    borderSide: const BorderSide(
+                      color: Colors.blue,
+                    ),
+                  ),
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10),
+                    borderSide: const BorderSide(
+                      color: Color.fromARGB(115, 158, 158, 158),
+                    ),
                   ),
                 ),
               ),
@@ -81,7 +152,109 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                 ),
               ),
-            )
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 13),
+              child: Row(
+                children: const [
+                  Expanded(
+                      child: Divider(
+                    endIndent: 10,
+                    indent: 40,
+                    color: Colors.black,
+                  )),
+                  Text(
+                    'OU',
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                  Expanded(
+                    child: Divider(
+                      indent: 10,
+                      endIndent: 40,
+                      color: Colors.black,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(height: 10),
+            SizedBox(
+              height: 49,
+              width: 320,
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                ),
+                onPressed: () {},
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: const [
+                    Icon(Icons.facebook),
+                    Text("Facebook"),
+                    SizedBox(
+                      width: 10,
+                    )
+                  ],
+                ),
+              ),
+            ),
+            const SizedBox(height: 10),
+            SizedBox(
+              height: 49,
+              width: 320,
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.black,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                ),
+                onPressed: () {},
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: const [
+                    Icon(Icons.apple),
+                    Text("Continuar com Apple"),
+                    SizedBox(
+                      width: 10,
+                    )
+                  ],
+                ),
+              ),
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            SizedBox(
+              width: 320,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: const [
+                      Text('Não tem uma conta?'),
+                      Text(
+                        'Cadastre-se',
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                    ],
+                  ),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: const [
+                      Text('Esqueceu sua senha?'),
+                      Text(
+                        'Redefinir senha',
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
           ],
         ),
       ),
