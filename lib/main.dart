@@ -1,4 +1,4 @@
-import 'package:burguer_app/home/ui/card_reserva_page.dart';
+import 'package:burguer_app/home/ui/perfil_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
         appBarTheme: const AppBarTheme(color: Colors.white),
         primarySwatch: Colors.blue,
       ),
-      home: const CardReservaPage(),
+      home: const PerfilPage(),
     );
   }
 }

@@ -103,9 +103,11 @@ class _PerfilPageState extends State<PerfilPage> {
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
+        elevation: 0,
+        fixedColor: Colors.black,
+        backgroundColor: const Color.fromARGB(159, 250, 247, 247),
         items: const [
           BottomNavigationBarItem(
-            backgroundColor: Colors.red,
             label: 'Delivery',
             icon: Icon(
               Icons.home_filled,
@@ -141,10 +143,12 @@ class _PerfilPageState extends State<PerfilPage> {
 
   List<OpcoesContainerCustom> list = [
     OpcoesContainerCustom(
-        title: "Termos e condições de uso", icon: Icons.access_time),
+        title: "Termos e condições de uso", icon: Icons.view_list_rounded),
     OpcoesContainerCustom(
-        title: "Solicitar remoção de dados", icon: Icons.access_time),
-    OpcoesContainerCustom(title: "Sobre o aplicativo", icon: Icons.access_time),
+        title: "Solicitar remoção de dados",
+        icon: Icons.disabled_by_default_rounded),
+    OpcoesContainerCustom(
+        title: "Sobre o aplicativo", icon: Icons.account_tree_outlined),
     OpcoesContainerCustom(
         title: "Limpar Histórico de uso", icon: Icons.access_time),
     OpcoesContainerCustom(title: "Reportar erro", icon: Icons.access_time),
