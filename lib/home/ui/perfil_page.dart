@@ -1,5 +1,6 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
+import 'package:dotted_line/dotted_line.dart';
 
 import 'package:burguer_app/home/widgets/container_custom_widget.dart';
 
@@ -18,7 +19,7 @@ class _PerfilPageState extends State<PerfilPage> {
         toolbarHeight: 0,
         backgroundColor: Colors.white,
       ),
-      backgroundColor: Colors.white,
+      backgroundColor: const Color.fromARGB(244, 255, 255, 255),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -48,17 +49,31 @@ class _PerfilPageState extends State<PerfilPage> {
           ),
           TextButton(
             onPressed: () {},
-            child: const Text('Editar'),
+            child: const Text(
+              'Editar',
+              style: TextStyle(color: Colors.grey),
+            ),
           ),
+          ContainerCustomWidget(
+            title: 'Reservas',
+            icon: Icons.my_library_books_outlined,
+            ontap: () {},
+          ),
+          const SizedBox(height: 25),
           ContainerCustomWidget(
             title: 'Notificações',
             icon: Icons.add_alert_outlined,
             trailing: Switch(
+              activeColor: Colors.white10,
+              activeTrackColor: Colors.green,
               value: true,
               onChanged: (value) {},
             ),
           ),
-          //ContainerCustomWidget(title: title, icon: icon),
+          const Divider(
+            color: Colors.grey,
+            height: 5,
+          ),
           Expanded(
             child: ListView.builder(
               itemCount: list.length,
@@ -68,26 +83,71 @@ class _PerfilPageState extends State<PerfilPage> {
                           children: [
                             ContainerCustomWidget(title: e.title, icon: e.icon),
                             const Divider(
-                              color: Colors.black,
-                              height: 3,
-                            )
+                              color: Colors.grey,
+                              height: 5,
+                            ),
                           ],
                         ))
                     .toList();
                 return listaW[index];
               },
             ),
-          )
+          ),
+          const Padding(
+            padding: EdgeInsets.only(bottom: 30),
+            child: ContainerCustomWidget(
+              title: 'Sair',
+              icon: Icons.logout,
+            ),
+          ),
+        ],
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        items: const [
+          BottomNavigationBarItem(
+            backgroundColor: Colors.red,
+            label: 'Delivery',
+            icon: Icon(
+              Icons.home_filled,
+              size: 27,
+              color: Color.fromARGB(255, 23, 85, 25),
+            ),
+          ),
+          BottomNavigationBarItem(
+            /* activeIcon: Icon(
+              Icons.search,
+              size: 27,
+              color: Color.fromARGB(255, 23, 85, 25),
+            )*/
+            label: 'Buscar',
+            icon: Icon(
+              Icons.search,
+              size: 27,
+              color: Color.fromARGB(255, 23, 85, 25),
+            ),
+          ),
+          BottomNavigationBarItem(
+            label: 'Perfil',
+            icon: Icon(
+              Icons.person_pin,
+              size: 27,
+              color: Color.fromARGB(255, 23, 85, 25),
+            ),
+          ),
         ],
       ),
     );
   }
 
   List<OpcoesContainerCustom> list = [
-    OpcoesContainerCustom(title: "Termos", icon: Icons.access_time),
-    OpcoesContainerCustom(title: "Termos", icon: Icons.access_time),
-    OpcoesContainerCustom(title: "Termos", icon: Icons.access_time),
-    OpcoesContainerCustom(title: "Termos", icon: Icons.access_time),
+    OpcoesContainerCustom(
+        title: "Termos e condições de uso", icon: Icons.access_time),
+    OpcoesContainerCustom(
+        title: "Solicitar remoção de dados", icon: Icons.access_time),
+    OpcoesContainerCustom(title: "Sobre o aplicativo", icon: Icons.access_time),
+    OpcoesContainerCustom(
+        title: "Limpar Histórico de uso", icon: Icons.access_time),
+    OpcoesContainerCustom(title: "Reportar erro", icon: Icons.access_time),
   ];
 }
 

@@ -20,26 +20,36 @@ class ContainerCustomWidget extends StatelessWidget {
     return InkWell(
       onTap: ontap ?? () {},
       child: Container(
-        height: 50,
+        height: 52,
         decoration: const BoxDecoration(
-          color: Color.fromARGB(248, 243, 239, 239),
+          color: Color.fromARGB(200, 240, 239, 239),
         ),
-        child: Row(
-          children: [
-            Expanded(
-              flex: 3,
-              child: Row(
-                children: [
-                  Icon(icon),
-                  Text(title),
-                ],
+        child: Padding(
+          padding: const EdgeInsets.only(left: 9),
+          child: Row(
+            children: [
+              Expanded(
+                flex: 3,
+                child: Row(
+                  children: [
+                    Icon(
+                      icon,
+                      color: const Color.fromARGB(255, 32, 112, 35),
+                    ),
+                    const SizedBox(
+                      width: 10,
+                      height: 0,
+                    ),
+                    Text(title),
+                  ],
+                ),
               ),
-            ),
-            Expanded(
-              flex: 1,
-              child: trailing ?? Container(),
-            ),
-          ],
+              Expanded(
+                flex: 1,
+                child: trailing ?? Container(),
+              ),
+            ],
+          ),
         ),
       ),
     );
