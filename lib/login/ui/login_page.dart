@@ -1,4 +1,6 @@
+import 'package:burguer_app/profile/ui/perfil_page.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class LoginPage extends StatefulWidget {
@@ -142,7 +144,7 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 fixedSize: const Size(320, 50),
               ),
-              onPressed: () {},
+              onPressed: () => Modular.to.pushNamed('/'),
               child: Center(
                 child: Text(
                   'Entrar',

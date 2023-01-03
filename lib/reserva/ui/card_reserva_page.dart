@@ -16,14 +16,14 @@ class _CardReservaPageState extends State<CardReservaPage> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           SizedBox(
-            height: MediaQuery.of(context).size.height - 220,
+            height: MediaQuery.of(context).size.height - 300,
             width: MediaQuery.of(context).size.width - 20,
             child: Card(
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(20),
               ),
               elevation: 10,
-              color: const Color.fromARGB(143, 243, 239, 239),
+              color: const Color.fromARGB(255, 243, 239, 239),
               margin: const EdgeInsets.only(left: 20),
               child: Column(
                 children: [

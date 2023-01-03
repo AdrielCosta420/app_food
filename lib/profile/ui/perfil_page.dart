@@ -1,8 +1,8 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
-import 'package:dotted_line/dotted_line.dart';
 
 import 'package:burguer_app/home/widgets/container_custom_widget.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 
 class PerfilPage extends StatefulWidget {
   const PerfilPage({Key? key}) : super(key: key);
@@ -43,7 +43,12 @@ class _PerfilPageState extends State<PerfilPage> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: const [
-                Text('Adriel Costa'),
+                Text(
+                  'Adriel Costa',
+                  style: TextStyle(
+                    fontSize: 20,
+                  ),
+                ),
               ],
             ),
           ),
@@ -79,15 +84,17 @@ class _PerfilPageState extends State<PerfilPage> {
               itemCount: list.length,
               itemBuilder: (context, index) {
                 var listaW = list
-                    .map((e) => Column(
-                          children: [
-                            ContainerCustomWidget(title: e.title, icon: e.icon),
-                            const Divider(
-                              color: Colors.grey,
-                              height: 5,
-                            ),
-                          ],
-                        ))
+                    .map(
+                      (e) => Column(
+                        children: [
+                          ContainerCustomWidget(title: e.title, icon: e.icon),
+                          const Divider(
+                            color: Colors.grey,
+                            height: 5,
+                          ),
+                        ],
+                      ),
+                    )
                     .toList();
                 return listaW[index];
               },
@@ -151,15 +158,21 @@ class _PerfilPageState extends State<PerfilPage> {
         title: "Sobre o aplicativo", icon: Icons.account_tree_outlined),
     OpcoesContainerCustom(
         title: "Limpar Histórico de uso", icon: Icons.access_time),
-    OpcoesContainerCustom(title: "Reportar erro", icon: Icons.access_time),
+    OpcoesContainerCustom(
+      title: "Reportar erro",
+      icon: Icons.access_time,
+      ontap: () => Modular.to.pushNamed('/report'),
+    ),
   ];
 }
 
 class OpcoesContainerCustom {
   String title;
   IconData icon;
+  final void Function()? ontap;
   OpcoesContainerCustom({
     required this.title,
     required this.icon,
+    this.ontap,
   });
 }

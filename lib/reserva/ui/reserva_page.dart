@@ -1,3 +1,4 @@
+import 'package:burguer_app/reserva/ui/card_reserva_page.dart';
 import 'package:flutter/material.dart';
 
 class ReservaPage extends StatefulWidget {
@@ -238,7 +239,6 @@ class _ReservaPageState extends State<ReservaPage> {
                             fixedSize: const Size(150, 50)),
                         onPressed: () {},
                         child: DropdownButton(
-
                           isExpanded: true,
                           icon: const Icon(
                             Icons.arrow_drop_down,
@@ -246,7 +246,6 @@ class _ReservaPageState extends State<ReservaPage> {
                           ),
                           items: listHoras
                               .map<DropdownMenuItem<String>>((String value) {
-                              
                             return DropdownMenuItem<String>(
                               value: value,
                               child: Text(value),
