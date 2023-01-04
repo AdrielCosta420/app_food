@@ -1,3 +1,4 @@
+import 'package:burguer_app/profile/ui/perfil_page.dart';
 import 'package:flutter/material.dart';
 
 class CardReservaPage extends StatefulWidget {
@@ -209,7 +210,9 @@ class _CardReservaPageState extends State<CardReservaPage> {
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(15)),
                           fixedSize: const Size(220, 40)),
-                      onPressed: () {},
+                      onPressed: () => Navigator.of(context).push(
+                          MaterialPageRoute(
+                              builder: (context) => const PerfilPage())),
                       child: const Text(
                         'OK',
                         style: TextStyle(

@@ -272,7 +272,8 @@ class _ReservaPageState extends State<ReservaPage> {
                 fixedSize: const Size(220, 50),
                 backgroundColor: const Color.fromARGB(255, 40, 165, 44),
               ),
-              onPressed: () => Modular.to.pushNamed('/cardReserva/'),
+              onPressed: () => Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => const CardReservaPage())),
               child: const Text(
                 'Reservar',
                 style: TextStyle(

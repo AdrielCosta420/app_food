@@ -100,11 +100,12 @@ class _PerfilPageState extends State<PerfilPage> {
               },
             ),
           ),
-          const Padding(
-            padding: EdgeInsets.only(bottom: 30),
+          Padding(
+            padding: const EdgeInsets.only(bottom: 30),
             child: ContainerCustomWidget(
               title: 'Sair',
               icon: Icons.logout,
+              ontap: () => Modular.to.pushNamed('/login/'),
             ),
           ),
         ],
@@ -160,7 +161,7 @@ class _PerfilPageState extends State<PerfilPage> {
         title: "Limpar Histórico de uso", icon: Icons.text_snippet_outlined),
     OpcoesContainerCustom(
       title: "Reportar erro",
-      icon: Icons.error_sharp,
+      icon: Icons.error_outline_sharp,
       ontap: () => Modular.to.pushNamed('/report/'),
     ),
   ];
