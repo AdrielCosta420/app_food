@@ -1,5 +1,6 @@
 import 'package:burguer_app/reserva/ui/card_reserva_page.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 
 class ReservaPage extends StatefulWidget {
   const ReservaPage({Key? key}) : super(key: key);
@@ -271,7 +272,7 @@ class _ReservaPageState extends State<ReservaPage> {
                 fixedSize: const Size(220, 50),
                 backgroundColor: const Color.fromARGB(255, 40, 165, 44),
               ),
-              onPressed: () {},
+              onPressed: () => Modular.to.pushNamed('/cardReserva/'),
               child: const Text(
                 'Reservar',
                 style: TextStyle(

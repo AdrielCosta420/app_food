@@ -62,7 +62,7 @@ class _PerfilPageState extends State<PerfilPage> {
           ContainerCustomWidget(
             title: 'Reservas',
             icon: Icons.my_library_books_outlined,
-            ontap: () {},
+            ontap: () => Modular.to.pushNamed('/reserva/'),
           ),
           const SizedBox(height: 25),
           ContainerCustomWidget(
@@ -157,11 +157,11 @@ class _PerfilPageState extends State<PerfilPage> {
     OpcoesContainerCustom(
         title: "Sobre o aplicativo", icon: Icons.account_tree_outlined),
     OpcoesContainerCustom(
-        title: "Limpar Histórico de uso", icon: Icons.access_time),
+        title: "Limpar Histórico de uso", icon: Icons.text_snippet_outlined),
     OpcoesContainerCustom(
       title: "Reportar erro",
-      icon: Icons.access_time,
-      ontap: () => Modular.to.pushNamed('/report'),
+      icon: Icons.error_sharp,
+      ontap: () => Modular.to.pushNamed('/report/'),
     ),
   ];
 }

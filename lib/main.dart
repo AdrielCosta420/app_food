@@ -1,8 +1,16 @@
+import 'package:burguer_app/app_module.dart';
+import 'package:burguer_app/app_widget.dart';
 import 'package:burguer_app/login/ui/login_page.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    ModularApp(
+      module: AppModule(),
+      child: const AppWidget(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {

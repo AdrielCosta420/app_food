@@ -4,16 +4,13 @@ import 'package:burguer_app/reserva/ui/reserva_page.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
 class ReservaModule extends Module{
-  @override
-  List<Module> get imports => [];
-
 
   @override
-  final List<Bind> binds = [];
+  List<Bind> get binds => [];
 
   @override
-  final List<ModularRoute> routes = [
-    ChildRoute('/', child: (_, args) => const ReservaPage()),
-    ChildRoute('/cardReserva', child: (_, args) => const CardReservaPage()),
+  List<ModularRoute> get routes => [
+    ChildRoute('/', child: (context, args) => const ReservaPage()),
+    ChildRoute('/cardReserva', child: (context, args) => const CardReservaPage()),
   ];
 }
