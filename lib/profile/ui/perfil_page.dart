@@ -87,7 +87,8 @@ class _PerfilPageState extends State<PerfilPage> {
                     .map(
                       (e) => Column(
                         children: [
-                          ContainerCustomWidget(title: e.title, icon: e.icon),
+                          ContainerCustomWidget(
+                              title: e.title, icon: e.icon, ontap: e.ontap),
                           const Divider(
                             color: Colors.grey,
                             height: 5,
@@ -153,8 +154,10 @@ class _PerfilPageState extends State<PerfilPage> {
     OpcoesContainerCustom(
         title: "Termos e condições de uso", icon: Icons.view_list_rounded),
     OpcoesContainerCustom(
-        title: "Solicitar remoção de dados",
-        icon: Icons.disabled_by_default_rounded),
+      title: "Solicitar remoção de dados",
+      icon: Icons.disabled_by_default_rounded,
+      ontap: () => Modular.to.pushNamed('/remocao/'),
+    ),
     OpcoesContainerCustom(
         title: "Sobre o aplicativo", icon: Icons.account_tree_outlined),
     OpcoesContainerCustom(
