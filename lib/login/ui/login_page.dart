@@ -1,4 +1,4 @@
-import 'package:burguer_app/cadastro/cadastro_page.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -239,9 +239,7 @@ class _LoginPageState extends State<LoginPage> {
                     children: [
                       const Text('Não tem uma conta?'),
                       GestureDetector(
-                        onTap: () => Navigator.of(context).push(
-                            MaterialPageRoute(
-                                builder: (context) => const CadastroPage())),
+                        onTap: () => Modular.to.pushNamed('/cadastro/'),
                         child: const Text(
                           'Cadastre-se',
                           style: TextStyle(fontWeight: FontWeight.bold),
