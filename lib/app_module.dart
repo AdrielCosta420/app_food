@@ -1,5 +1,7 @@
 import 'package:burguer_app/%20options/options_module.dart';
+import 'package:burguer_app/buscar/buscar_module.dart';
 import 'package:burguer_app/cadastro/cadastro_module.dart';
+import 'package:burguer_app/delivery/delivery_module.dart';
 import 'package:burguer_app/login/login_module.dart';
 import 'package:burguer_app/profile/profile_module.dart';
 import 'package:burguer_app/remocao%20de%20dados/remocao_de_dados_module.dart';
@@ -21,5 +23,7 @@ class AppModule extends Module {
     ModuleRoute('/opcao', module: OptionsModule()),
     ModuleRoute('/report', module: ReportModule()),
     ModuleRoute('/remocao', module: RemocaoDeDadosModule()),
+    ModuleRoute('/buscar', module: BuscarModule()),
+    ModuleRoute('/delivery', module: DeliveryModule()),
   ];
 }

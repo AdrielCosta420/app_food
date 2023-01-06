@@ -5,6 +5,8 @@ import 'package:burguer_app/home/widgets/container_custom_widget.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
 class PerfilPage extends StatefulWidget {
+  final int currentPage = 0;
+
   const PerfilPage({Key? key}) : super(key: key);
 
   @override
@@ -112,6 +114,18 @@ class _PerfilPageState extends State<PerfilPage> {
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
+        currentIndex: 0,
+        onTap: (value) {
+          if (value == 0) {
+            Modular.to.pushNamed('/delivery/');
+          }
+          if (value == 1) {
+            Modular.to.pushNamed('/buscar/');
+          }
+          if (value == 2) {
+            Modular.to.pushNamed('/perfil/');
+          }
+        },
         elevation: 0,
         fixedColor: Colors.black,
         backgroundColor: const Color.fromARGB(159, 250, 247, 247),
