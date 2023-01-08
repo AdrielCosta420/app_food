@@ -7,6 +7,6 @@ class BuscarModule extends Module {
 
   @override
   List<ModularRoute> get routes => [
-    ChildRoute('/', child:(_, args) => const BuscarPage()),
+    ChildRoute('/', child:(_, args) =>  const BuscarPage()),
   ];
 }

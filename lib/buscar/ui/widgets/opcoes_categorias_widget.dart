@@ -14,7 +14,7 @@ class OpcoesCategoriasWidget extends StatelessWidget {
       children: [
         Container(
           height: 100,
-          width: 200,
+          width: 150,
           /* ClipRRect(
                         //  borderRadius: BorderRadius.circular(10),
                         child: SizedBox.fromSize(
