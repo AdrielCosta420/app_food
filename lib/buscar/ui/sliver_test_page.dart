@@ -46,7 +46,7 @@ class _SliverTestPageState extends State<SliverTestPage> {
           shadowColor: colorGreen,
           centerTitle: true,
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(25),
+            borderRadius: BorderRadius.circular(10),
           ),
           title: LayoutBuilder(
               key: keyBar,
