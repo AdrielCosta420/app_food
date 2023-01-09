@@ -163,7 +163,7 @@ class _BuscarPageState extends State<BuscarPage> {
                 ),
               ),
               ListView.separated(
-                separatorBuilder: (context, index) => VerticalDivider(),
+                separatorBuilder: (context, index) => const VerticalDivider(),
                 shrinkWrap: true,
                 scrollDirection: Axis.vertical,
                 itemCount: listCardapio.length,

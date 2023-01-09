@@ -14,9 +14,10 @@ class OpcoesCardapioWidget extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Container(
+          height: 120,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),
-            color: Colors.grey[200],
+            color: Colors.grey[100],
           ),
           child: Column(
             children: [
@@ -29,8 +30,8 @@ class OpcoesCardapioWidget extends StatelessWidget {
                     child: Row(
                       children: [
                         Container(
-                          height: 100,
-                          width: 150,
+                          height: 120,
+                          width: 170,
                           decoration: BoxDecoration(
                             //   color: Colors.red,
                             borderRadius: BorderRadius.circular(15),
@@ -58,10 +59,11 @@ class OpcoesCardapioWidget extends StatelessWidget {
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
-                            const SizedBox(
-                              height: 50,
-                            ),
-                            Text('R\$ 99.90')
+                            Text(
+                                'Ate onde vai isso aqui?\nParece bom, entao vamos\ncontinuar mais um pouco\npra ver ate onde suporta\nde fato, e é isso'),
+
+                            //Text(cardapio.description),
+                            Text(cardapio.price)
                           ],
                         ),
                       ],

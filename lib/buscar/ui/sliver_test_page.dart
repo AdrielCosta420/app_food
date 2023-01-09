@@ -18,6 +18,7 @@ class SliverTestPage extends StatefulWidget {
 class _SliverTestPageState extends State<SliverTestPage> {
   late List<Categorias> listCategorias;
   late List<Cardapio> listCardapio;
+  final Key keyBar = GlobalKey();
 
   @override
   void initState() {
@@ -44,20 +45,22 @@ class _SliverTestPageState extends State<SliverTestPage> {
           elevation: 20,
           shadowColor: colorGreen,
           centerTitle: true,
-          shape:
-              RoundedRectangleBorder(borderRadius: BorderRadius.circular(40)),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(25),
+          ),
           title: LayoutBuilder(
+              key: keyBar,
               builder: (BuildContext context, BoxConstraints constraints) {
-            if (constraints.biggest.height < 150) {
-              return const Text(
-                'Cardápio',
-                style: TextStyle(color: Colors.white),
-              );
-            }
-            return Container(
-              color: Colors.black,
-            );
-          }),
+                if (constraints.biggest.height < 150) {
+                  return const Text(
+                    'Cardápio',
+                    style: TextStyle(color: Colors.white),
+                  );
+                }
+                return Container(
+                  color: Colors.black,
+                );
+              }),
           automaticallyImplyLeading: true,
           backgroundColor: colorGreen,
           floating: true,
@@ -220,7 +223,8 @@ class _SliverTestPageState extends State<SliverTestPage> {
                     ),
                   ),
                   ListView.separated(
-                    separatorBuilder: (context, index) => VerticalDivider(),
+                    separatorBuilder: (context, index) =>
+                        const VerticalDivider(),
                     shrinkWrap: true,
                     scrollDirection: Axis.vertical,
                     itemCount: listCardapio.length,
