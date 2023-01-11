@@ -332,6 +332,15 @@ class _Teste1PageViewPageState extends State<Teste1PageViewPage> {
               width: MediaQuery.of(context).size.width,
               height: 170,
               decoration: const BoxDecoration(
+                boxShadow: [
+                  BoxShadow(
+                    blurStyle: BlurStyle.solid,
+                    offset: Offset(1.5, 1.5),
+                    blurRadius: 1,
+                    spreadRadius: 0.1,
+                    color: Colors.grey,
+                  ),
+                ],
                 color: Color.fromARGB(255, 243, 240, 240),
               ),
               child: Padding(
@@ -348,7 +357,6 @@ class _Teste1PageViewPageState extends State<Teste1PageViewPage> {
                         fontSize: 17,
                       ),
                     ),
-                    const Divider(),
                     Expanded(
                       child: RadioListTile(
                         activeColor: colorGreen,
