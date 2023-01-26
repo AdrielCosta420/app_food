@@ -3,7 +3,8 @@ List<Map<String, dynamic>> listaCardapioMapMock = [
     "title": "Pizza Vegan",
     "image":
         "https://static.wixstatic.com/media/4798a8_0ff820b2a2ed4f25b99dd853ac8ace77~mv2.jpg/v1/fill/w_640,h_428,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/4798a8_0ff820b2a2ed4f25b99dd853ac8ace77~mv2.jpg",
-    "description": "Nossas pizzas são totalmente veganas!",
+    "description":
+        "Feita com ingredientes vegetais como vegetais frescos, cogumelos, tomates, ervas e especiarias, e pode ser coberta com queijo vegano. A massa da pizza é feita com farinha de trigo ou outros tipos de farinha.",
     "price": "R\$ 79.90",
   },
   {

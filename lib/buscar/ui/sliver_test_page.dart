@@ -1,6 +1,6 @@
 import 'package:burguer_app/constants/color_constans.dart';
+import 'package:emojis/emojis.dart';
 import 'package:flutter/material.dart';
-
 import 'mock/cardapio.dart';
 import 'mock/cardapio_map.dart';
 import 'mock/categorias.dart';
@@ -46,7 +46,7 @@ class _SliverTestPageState extends State<SliverTestPage> {
           shadowColor: colorGreen,
           centerTitle: true,
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(10),
+            borderRadius: BorderRadius.circular(0),
           ),
           title: LayoutBuilder(
               key: keyBar,
@@ -158,68 +158,60 @@ class _SliverTestPageState extends State<SliverTestPage> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(left: 14.5, right: 14.5),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Expanded(
-                          flex: 1,
-                          child: Row(
-                            children: const [
-                              Icon(
-                                Icons.dangerous_outlined,
-                                color: Colors.red,
-                                size: 32,
-                              ),
-                              Text(
-                                'Zero Lactose',
-                                style: TextStyle(
-                                  color: Colors.red,
-                                  fontWeight: FontWeight.w600,
+                    padding: const EdgeInsets.only(left: 19, right: 14.5),
+                    child: Container(
+                      //  height: 30,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: const Color.fromARGB(255, 253, 253, 253),
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Expanded(
+                            flex: 1,
+                            child: Row(
+                              children: const [
+                                Text(
+                                  '${Emojis.glassOfMilk} Zero Lactose',
+                                  style: TextStyle(
+                                    color: Colors.blue,
+                                    fontWeight: FontWeight.w600,
+                                  ),
                                 ),
-                              ),
-                            ],
+                              ],
+                            ),
                           ),
-                        ),
-                        Expanded(
-                          flex: 1,
-                          child: Row(
-                            children: const [
-                              Icon(
-                                Icons.dangerous_outlined,
-                                color: Colors.blue,
-                                size: 32,
-                              ),
-                              Text(
-                                'Zero Gluten',
-                                style: TextStyle(
-                                  color: Colors.blue,
-                                  fontWeight: FontWeight.w600,
+                          Expanded(
+                            flex: 1,
+                            child: Row(
+                              children: const [
+                                Text(
+                                  '${Emojis.redCircle} Zero Gluten',
+                                  style: TextStyle(
+                                    color: Colors.red,
+                                    fontWeight: FontWeight.w600,
+                                  ),
+                                )
+                              ],
+                            ),
+                          ),
+                          Expanded(
+                            flex: 1,
+                            child: Row(
+                              children: const [
+                                Text(
+                                  '${Emojis.egg}  Contém Ovos',
+                                  style: TextStyle(
+                                    color: colorGreen,
+                                    fontWeight: FontWeight.w600,
+                                  ),
                                 ),
-                              )
-                            ],
+                              ],
+                            ),
                           ),
-                        ),
-                        Expanded(
-                          flex: 1,
-                          child: Row(
-                            children: const [
-                              Icon(
-                                Icons.egg_sharp,
-                                color: colorGreen,
-                                size: 32,
-                              ),
-                              Text(
-                                'Contém Ovos',
-                                style: TextStyle(
-                                  color: colorGreen,
-                                  fontWeight: FontWeight.w600,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   ),
                   ListView.separated(

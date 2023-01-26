@@ -15,11 +15,23 @@ class OpcoesCardapioWidget extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: InkWell(
-          onTap: () => Navigator.of(context).push(MaterialPageRoute(
-              builder: ((context) => const TesteOpcaoCardapioPage()))),
+          onTap: () => Navigator.of(context).push(
+            MaterialPageRoute(
+              builder: ((context) => TesteOpcaoCardapioPage(
+                    cardapio: cardapio,
+                  )),
+            ),
+          ),
           child: Container(
-            height: 120,
+            height: 130,
             decoration: BoxDecoration(
+              boxShadow: [
+                BoxShadow(
+                  spreadRadius: 0.8,
+                  color: Colors.grey.shade300,
+                  offset: const Offset(0.1, 0.1),
+                )
+              ],
               borderRadius: BorderRadius.circular(10),
               color: Colors.grey[100],
             ),
@@ -34,11 +46,11 @@ class OpcoesCardapioWidget extends StatelessWidget {
                       child: Row(
                         children: [
                           Container(
-                            height: 120,
+                            height: 130,
                             width: 170,
                             decoration: BoxDecoration(
                               //   color: Colors.red,
-                              borderRadius: BorderRadius.circular(15),
+                              borderRadius: BorderRadius.circular(10),
                               image: DecorationImage(
                                 fit: BoxFit.fill,
                                 image: NetworkImage(cardapio.image),
@@ -56,12 +68,15 @@ class OpcoesCardapioWidget extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.start,
                             crossAxisAlignment: CrossAxisAlignment.end,
                             children: [
-                              Text(
-                                cardapio.title,
-                                style: const TextStyle(
-                                  color: colorGreen,
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 16,
+                              Padding(
+                                padding: const EdgeInsets.only(bottom: 8.0),
+                                child: Text(
+                                  cardapio.title,
+                                  style: const TextStyle(
+                                    color: colorGreen,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 16,
+                                  ),
                                 ),
                               ),
                               const Text(
