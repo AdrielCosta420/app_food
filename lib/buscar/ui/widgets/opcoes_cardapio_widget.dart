@@ -83,7 +83,7 @@ class OpcoesCardapioWidget extends StatelessWidget {
                                 'Ate onde vai isso aqui?\nParece bom, entao vamos\ncontinuar mais um pouco\npra ver ate onde suporta\nde fato, e é isso',
                                 style: TextStyle(
                                   color: Colors.black,
-                                  fontSize: 14,
+                                  fontSize: 15,
                                 ),
                               ),
 
