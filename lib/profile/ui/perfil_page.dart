@@ -120,6 +120,7 @@ class _PerfilPageState extends State<PerfilPage> {
               ontap: () => Modular.to.pushNamed('/login/'),
             ),
           ),
+         // ElevatedButton(onPressed: onPressed, child: child)
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(

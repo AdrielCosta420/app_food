@@ -2,18 +2,20 @@ List<Map<String, dynamic>> listaCardapioMapMock = [
   {
     "title": "Pizza Vegan",
     "image":
-        "https://static.wixstatic.com/media/4798a8_0ff820b2a2ed4f25b99dd853ac8ace77~mv2.jpg/v1/fill/w_640,h_428,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/4798a8_0ff820b2a2ed4f25b99dd853ac8ace77~mv2.jpg",
+        "https://images.unsplash.com/photo-1532768778661-1b347c5f02ce?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
     "description":
         "Feita com ingredientes vegetais como vegetais frescos, cogumelos, tomates, ervas e especiarias, e pode ser coberta com queijo vegano. A massa da pizza é feita com farinha de trigo ou outros tipos de farinha.",
     "price": "R\$ 79.90",
+    "litteDescription": "Depois eu faço,\nto com preguiça"
   },
   {
     "title": "Spaghetiti de pupunha",
     "image":
-        "https://images.unsplash.com/photo-1465014925804-7b9ede58d0d7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=776&q=80",
+        "https://images.unsplash.com/photo-1516100882582-96c3a05fe590?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
     "description":
         "Nosso Spaghetiti especial!\nParece bom, entao vamos\ncontinuar mais um pouco\npra ver ate onde suporta\nde fato, e é iss",
     "price": "R\$ 54.90",
+    "litteDescription": "Depois eu faço,\nto com preguiça"
   },
   {
     "title": "Spaghetiti Verde",
@@ -22,21 +24,45 @@ List<Map<String, dynamic>> listaCardapioMapMock = [
     "description":
         "Ate onde vai isso aqui?\nParece bom, entao vamos\ncontinuar mais um pouco\npra ver ate onde suporta\nde fato, e é isso",
     "price": "R\$ 44.90",
+    "litteDescription": "Depois eu faço,\nto com preguiça"
   },
   {
-    "title": "Spaghetiti Verde",
+    "title": "Pizza de Batata Doce",
     "image":
-        "https://images.unsplash.com/photo-1598023696416-0193a0bcd302?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1536&q=80",
+        "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=781&q=80",
     "description":
         "Ate onde vai isso aqui?\nParece bom, entao vamos\ncontinuar mais um pouco\npra ver ate onde suporta\nde fato, e é iss",
     "price": "R\$ 65.99",
+    "litteDescription":
+        "Esse é para aqueles que\nalmejam uma massa fit,\nalém de saberoar nossa\ndeliciosa pizza!"
   },
   {
-    "title": "Spaghetiti Verde",
+    "title": "Panqueca de Mel",
     "image":
-        "https://images.unsplash.com/photo-1598023696416-0193a0bcd302?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1536&q=80",
+        "https://images.unsplash.com/photo-1506084868230-bb9d95c24759?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
     "description":
         "Ate onde vai isso aqui?\nParece bom, entao vamos\ncontinuar mais um pouco\npra ver ate onde suporta\nde fato, e é iss",
-    "price": "R\$ 65.99",
+    "price": "R\$ 21.99",
+    "litteDescription": "A queridinha dos nossos\nclientes! Veja mais!"
+  },
+  {
+    "title": "X- Vegan",
+    "image":
+        "https://images.unsplash.com/photo-1532768641073-503a250f9754?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
+    "description":
+        "Venha experimentar nosso delicioso hambúrguer vegano! Feito com ingredientes frescos e selecionados, ele é perfeito para aqueles que procuram uma opção saudável e saborosa sem carne. Ele é feito com grãos, vegetais, legumes, feijão, soja, tempeh e tofu para um sabor único e delicioso. Servimos em um pão fresco com vegetais e condimentos para um lanche completo. Experimente hoje e sinta a diferença de um hambúrguer vegano",
+    "price": "R\$ 35,90",
+    "litteDescription":
+        "Nosso X-Vegan é feito\nespecialmente para os\namantes\nde um bom Hamburguer!"
+  },
+  {
+    "title": "Camarão com Brócolis",
+    "image":
+        "https://images.unsplash.com/photo-1569172131007-4954763443d2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1473&q=80",
+    "description":
+        "Feito com ingredientes vegetais de alta qualidade e tem um sabor e textura incrivelmente parecido com o camarão verdadeiro. Uma opção saudável e saborosa sem produtos de origem animal. Contém proteínas vegetais, amido de batata, óleo vegetal, e ervas e especiarias!",
+    "price": "R\$ 64,90",
+    "litteDescription":
+        "Camarão com Brócolis de\nalta qualidade,\ncom um sabor\ndiferenciado\nfeito com ingredientes especiais!"
   }
 ];

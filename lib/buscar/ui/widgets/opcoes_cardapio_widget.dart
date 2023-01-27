@@ -22,81 +22,83 @@ class OpcoesCardapioWidget extends StatelessWidget {
                   )),
             ),
           ),
-          child: Container(
-            height: 130,
-            decoration: BoxDecoration(
-              boxShadow: [
-                BoxShadow(
-                  spreadRadius: 0.8,
-                  color: Colors.grey.shade300,
-                  offset: const Offset(0.1, 0.1),
-                )
-              ],
-              borderRadius: BorderRadius.circular(10),
-              color: Colors.grey[100],
-            ),
-            child: Column(
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Expanded(
-                      flex: 1,
-                      child: Row(
-                        children: [
-                          Container(
-                            height: 130,
-                            width: 170,
-                            decoration: BoxDecoration(
-                              //   color: Colors.red,
-                              borderRadius: BorderRadius.circular(10),
-                              image: DecorationImage(
-                                fit: BoxFit.fill,
-                                image: NetworkImage(cardapio.image),
+          child: SingleChildScrollView(
+            child: Container(
+              height: 150,
+              decoration: BoxDecoration(
+                boxShadow: [
+                  BoxShadow(
+                    spreadRadius: 0.8,
+                    color: Colors.grey.shade300,
+                    offset: const Offset(0.1, 0.1),
+                  )
+                ],
+                borderRadius: BorderRadius.circular(10),
+                color: Colors.grey[100],
+              ),
+              child: Column(
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Expanded(
+                        flex: 1,
+                        child: Row(
+                          children: [
+                            Container(
+                              height: 150,
+                              width: 170,
+                              decoration: BoxDecoration(
+                                //   color: Colors.red,
+                                borderRadius: BorderRadius.circular(10),
+                                image: DecorationImage(
+                                  fit: BoxFit.fill,
+                                  image: NetworkImage(cardapio.image),
+                                ),
                               ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
-                    ),
-                    Expanded(
-                      flex: 1,
-                      child: Row(
-                        children: [
-                          Column(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.end,
-                            children: [
-                              Padding(
-                                padding: const EdgeInsets.only(bottom: 8.0),
-                                child: Text(
-                                  cardapio.title,
-                                  style: const TextStyle(
-                                    color: colorGreen,
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 16,
+                      Expanded(
+                        flex: 1,
+                        child: Row(
+                          children: [
+                            Column(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              crossAxisAlignment: CrossAxisAlignment.end,
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.only(bottom: 8.0),
+                                  child: Text(
+                                    cardapio.title,
+                                    style: const TextStyle(
+                                      color: colorGreen,
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 16,
+                                    ),
                                   ),
                                 ),
-                              ),
-                              const Text(
-                                'Ate onde vai isso aqui?\nParece bom, entao vamos\ncontinuar mais um pouco\npra ver ate onde suporta\nde fato, e é isso',
-                                style: TextStyle(
-                                  color: Colors.black,
-                                  fontSize: 15,
+                                Text(
+                                  cardapio.litteDescription,
+                                  style: const TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 15,
+                                  ),
                                 ),
-                              ),
 
-                              //Text(cardapio.description),
-                              Text(cardapio.price)
-                            ],
-                          ),
-                        ],
+                                //Text(cardapio.description),
+                                Text(cardapio.price)
+                              ],
+                            ),
+                          ],
+                        ),
                       ),
-                    ),
-                  ],
-                ),
-              ],
+                    ],
+                  ),
+                ],
+              ),
             ),
           ),
         ),

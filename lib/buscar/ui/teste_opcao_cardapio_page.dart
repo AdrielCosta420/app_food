@@ -1,7 +1,10 @@
 import 'package:burguer_app/buscar/ui/mock/categorias.dart';
+import 'package:burguer_app/buscar/ui/teste_1_page_view_page.dart';
+import 'package:burguer_app/buscar/ui/teste_pageview_page.dart';
 import 'package:burguer_app/buscar/ui/widgets/opcoes_categorias_widget.dart';
 import 'package:burguer_app/constants/color_constans.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 
 import 'mock/cardapio.dart';
 import 'mock/cardapio_map.dart';
@@ -25,6 +28,7 @@ class _TesteOpcaoCardapioPageState extends State<TesteOpcaoCardapioPage> {
   late List<Categorias> listCategorias;
   late List<Cardapio> listCardapio;
   int groupValue = 0;
+  int _quantity = 1;
 
   @override
   void initState() {
@@ -351,10 +355,82 @@ class _TesteOpcaoCardapioPageState extends State<TesteOpcaoCardapioPage> {
                 children: const [
                   Text(
                     'Alguma observação?',
+                    style: TextStyle(
+                        fontSize: 20,
+                        color: colorGreen,
+                        fontWeight: FontWeight.w400),
                   ),
                 ],
               ),
             ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: TextFormField(
+                maxLines: 2,
+                minLines: 2,
+                decoration: InputDecoration(
+                  border: const OutlineInputBorder(
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(15),
+                    ),
+                  ),
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(15),
+                    borderSide: const BorderSide(
+                      color: colorGreen,
+                    ),
+                  ),
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 8, right: 12, bottom: 8),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      border: Border.all(
+                        color: colorGreen,
+                      ),
+                    ),
+                    child: Row(
+                      children: [
+                        IconButton(
+                          icon: const Icon(Icons.remove),
+                          onPressed: () => setState(() => _quantity--),
+                        ),
+                        Text(_quantity.toString()),
+                        IconButton(
+                          icon: const Icon(Icons.add),
+                          onPressed: () => setState(() => _quantity++),
+                        ),
+                      ],
+                    ),
+                  ),
+                  SizedBox(
+                    width: 200,
+                    height: 50,
+                    child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        elevation: 4,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        backgroundColor: colorGreen,
+                      ),
+                      onPressed: () => Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: ((context) => const TestePageviewPage()),
+                        ),
+                      ),
+                      child: const Text('Adicionar   R\$ 84,90'),
+                    ),
+                  )
+                ],
+              ),
+            )
           ],
         ),
       ),

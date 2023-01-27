@@ -63,7 +63,7 @@ class _SliverTestPageState extends State<SliverTestPage> {
               }),
           automaticallyImplyLeading: true,
           backgroundColor: colorGreen,
-          floating: true,
+          floating: false,
           snap: false,
           pinned: true,
           expandedHeight: 180,
