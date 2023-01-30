@@ -1,18 +1,15 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
-import 'package:burguer_app/buscar/ui/widgets/opcoes_cardapio_widget.dart';
-import 'package:flutter/material.dart';
-
-import 'package:burguer_app/buscar/ui/mock/cardapio.dart';
-import 'package:burguer_app/buscar/ui/mock/cardapio_map.dart';
-import 'package:burguer_app/buscar/ui/mock/categorias.dart';
-import 'package:burguer_app/buscar/ui/mock/categorias_map.dart';
-import 'package:burguer_app/buscar/ui/widgets/opcoes_categorias_widget.dart';
 import 'package:burguer_app/constants/color_constans.dart';
+import 'package:emojis/emojis.dart';
+import 'package:flutter/material.dart';
+import 'mock/cardapio.dart';
+import 'mock/cardapio_map.dart';
+import 'mock/categorias.dart';
+import 'mock/categorias_map.dart';
+import 'widgets/opcoes_cardapio_widget.dart';
+import 'widgets/opcoes_categorias_widget.dart';
 
 class BuscarPage extends StatefulWidget {
-  const BuscarPage({
-    Key? key,
-  }) : super(key: key);
+  const BuscarPage({Key? key}) : super(key: key);
 
   @override
   State<BuscarPage> createState() => _BuscarPageState();
@@ -21,12 +18,13 @@ class BuscarPage extends StatefulWidget {
 class _BuscarPageState extends State<BuscarPage> {
   late List<Categorias> listCategorias;
   late List<Cardapio> listCardapio;
+  final Key keyBar = GlobalKey();
 
   @override
   void initState() {
-    super.initState();
     buscarMock();
     buscarCardapioMock();
+    super.initState();
   }
 
   void buscarMock() {
@@ -41,119 +39,88 @@ class _BuscarPageState extends State<BuscarPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.white,
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(
-            vertical: 70,
+    return CustomScrollView(
+      slivers: [
+        SliverAppBar(
+          elevation: 20,
+          shadowColor: colorGreen,
+          centerTitle: true,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(0),
           ),
-          child: Column(
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Expanded(
-                    child: SizedBox(
-                      height: 90,
-                      width: 50,
-                      child: Image.asset('assets/images/logo.png'),
-                    ),
-                  ),
-                  const Expanded(
-                    flex: 3,
-                    child: Padding(
-                      padding: EdgeInsets.only(left: 8.0, right: 8),
-                      child: TextField(
-                        decoration: InputDecoration(
-                          suffixIcon: Icon(
-                            Icons.search,
-                            color: colorGreen,
-                            size: 30,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 10,
-                  vertical: 30,
-                ),
-                child: SizedBox(
-                  height: 150,
-                  child: ListView.separated(
-                    separatorBuilder: (context, index) => const VerticalDivider(
-                      thickness: 0.9,
-                      endIndent: 50,
-                    ),
-                    itemCount: listCategorias.length,
-                    scrollDirection: Axis.horizontal,
-                    itemBuilder: (context, index) => OpcoesCategoriasWidget(
-                        categorias: listCategorias[index]),
-                  ),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(left: 14.5, right: 14.5),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
+          title: LayoutBuilder(
+              key: keyBar,
+              builder: (BuildContext context, BoxConstraints constraints) {
+                if (constraints.biggest.height < 150) {
+                  return const Text(
+                    'Cardápio',
+                    style: TextStyle(color: Colors.white),
+                  );
+                }
+                return Container(
+                  color: Colors.black,
+                );
+              }),
+          automaticallyImplyLeading: true,
+          backgroundColor: colorGreen,
+          floating: false,
+          snap: false,
+          pinned: true,
+          expandedHeight: 180,
+          flexibleSpace: FlexibleSpaceBar(
+            // title: Text('Título'),
+            background: Stack(
+              children: [
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Expanded(
-                      flex: 1,
+                    Padding(
+                      padding: const EdgeInsets.only(bottom: 15),
                       child: Row(
-                        children: const [
-                          Icon(
-                            Icons.dangerous_outlined,
-                            color: Colors.red,
-                            size: 32,
-                          ),
-                          Text(
-                            'Zero Lactose',
-                            style: TextStyle(
-                              color: Colors.red,
-                              fontWeight: FontWeight.w600,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Expanded(
+                            child: SizedBox(
+                              height: 90,
+                              width: 50,
+                              child: Image.asset('assets/images/logo.png'),
                             ),
                           ),
-                        ],
-                      ),
-                    ),
-                    Expanded(
-                      flex: 1,
-                      child: Row(
-                        children: const [
-                          Icon(
-                            Icons.dangerous_outlined,
-                            color: Colors.blue,
-                            size: 32,
-                          ),
-                          Text(
-                            'Zero Gluten',
-                            style: TextStyle(
-                              color: Colors.blue,
-                              fontWeight: FontWeight.w600,
-                            ),
-                          )
-                        ],
-                      ),
-                    ),
-                    Expanded(
-                      flex: 1,
-                      child: Row(
-                        children: const [
-                          Icon(
-                            Icons.egg_sharp,
-                            color: colorGreen,
-                            size: 32,
-                          ),
-                          Text(
-                            'Contém Ovos',
-                            style: TextStyle(
-                              color: colorGreen,
-                              fontWeight: FontWeight.w600,
+                          const Expanded(
+                            flex: 3,
+                            child: Padding(
+                              padding: EdgeInsets.only(left: 31.0, right: 25),
+                              child: TextField(
+                                style: TextStyle(
+                                  color: Colors.white,
+                                ),
+                                cursorColor: Colors.white,
+                                cursorWidth: 1,
+                                decoration: InputDecoration(
+                                  enabledBorder: UnderlineInputBorder(
+                                    borderSide: BorderSide(
+                                      color: Colors.white38,
+                                    ),
+                                  ),
+                                  border: UnderlineInputBorder(
+                                    borderSide: BorderSide(
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                  focusedBorder: UnderlineInputBorder(
+                                    borderSide: BorderSide(
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                  suffixIcon: Icon(
+                                    Icons.search,
+                                    color: Colors.white60,
+                                    size: 30,
+                                  ),
+                                ),
+                              ),
                             ),
                           ),
                         ],
@@ -161,19 +128,107 @@ class _BuscarPageState extends State<BuscarPage> {
                     ),
                   ],
                 ),
-              ),
-              ListView.separated(
-                separatorBuilder: (context, index) => const VerticalDivider(),
-                shrinkWrap: true,
-                scrollDirection: Axis.vertical,
-                itemCount: listCardapio.length,
-                itemBuilder: (context, index) =>
-                    OpcoesCardapioWidget(cardapio: listCardapio[index]),
+              ],
+            ),
+          ),
+        ),
+        SliverList(
+          delegate: SliverChildListDelegate(
+            [
+              Column(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 10,
+                      vertical: 30,
+                    ),
+                    child: SizedBox(
+                      height: 150,
+                      child: ListView.separated(
+                        separatorBuilder: (context, index) =>
+                            const VerticalDivider(
+                          thickness: 0.9,
+                          endIndent: 50,
+                        ),
+                        itemCount: listCategorias.length,
+                        scrollDirection: Axis.horizontal,
+                        itemBuilder: (context, index) => OpcoesCategoriasWidget(
+                            categorias: listCategorias[index]),
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 19, right: 14.5),
+                    child: Container(
+                      //  height: 30,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: const Color.fromARGB(255, 253, 253, 253),
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Expanded(
+                            flex: 1,
+                            child: Row(
+                              children: const [
+                                Text(
+                                  '${Emojis.glassOfMilk} Zero Lactose',
+                                  style: TextStyle(
+                                    color: Colors.blue,
+                                    fontWeight: FontWeight.w600,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          Expanded(
+                            flex: 1,
+                            child: Row(
+                              children: const [
+                                Text(
+                                  '${Emojis.redCircle} Zero Gluten',
+                                  style: TextStyle(
+                                    color: Colors.red,
+                                    fontWeight: FontWeight.w600,
+                                  ),
+                                )
+                              ],
+                            ),
+                          ),
+                          Expanded(
+                            flex: 1,
+                            child: Row(
+                              children: const [
+                                Text(
+                                  '${Emojis.egg}  Contém Ovos',
+                                  style: TextStyle(
+                                    color: colorGreen,
+                                    fontWeight: FontWeight.w600,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  ListView.separated(
+                    separatorBuilder: (context, index) =>
+                        const VerticalDivider(),
+                    shrinkWrap: true,
+                    scrollDirection: Axis.vertical,
+                    itemCount: listCardapio.length,
+                    itemBuilder: (context, index) =>
+                        OpcoesCardapioWidget(cardapio: listCardapio[index]),
+                  ),
+                ],
               ),
             ],
           ),
         ),
-      ),
+      ],
     );
   }
 }

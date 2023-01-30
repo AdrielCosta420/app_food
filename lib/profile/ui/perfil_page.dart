@@ -1,9 +1,6 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
-import 'package:burguer_app/buscar/ui/sliver_test_page.dart';
-import 'package:burguer_app/buscar/ui/teste_pageview_page.dart';
+import '../../buscar/ui/teste_pageview_page.dart';
 import 'package:flutter/material.dart';
-
-import 'package:burguer_app/home/widgets/container_custom_widget.dart';
+import '../../home/widgets/container_custom_widget.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
 class PerfilPage extends StatefulWidget {
@@ -66,17 +63,13 @@ class _PerfilPageState extends State<PerfilPage> {
           ContainerCustomWidget(
               title: 'Reservas',
               icon: Icons.my_library_books_outlined,
-              ontap: () => Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => const SliverTestPage(),
-                  ))
+              ontap: () {}
 
               //Modular.to.pushNamed('/reserva/'),
               ),
           const SizedBox(height: 25),
           ContainerCustomWidget(
-            ontap: () => Navigator.of(context).push(MaterialPageRoute(
-              builder: (context) => const TestePageviewPage(),
-            )),
+            ontap: () {},
             title: 'Notificações',
             icon: Icons.add_alert_outlined,
             trailing: Switch(

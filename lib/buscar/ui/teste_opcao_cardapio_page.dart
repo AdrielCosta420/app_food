@@ -96,6 +96,10 @@ class _TesteOpcaoCardapioPageState extends State<TesteOpcaoCardapioPage> {
               padding: const EdgeInsets.all(8.0),
               child: Text(
                 widget.cardapio.description,
+                style: const TextStyle(
+                  fontWeight: FontWeight.w300,
+                  fontSize: 20,
+                ),
               ),
             ),
             Padding(

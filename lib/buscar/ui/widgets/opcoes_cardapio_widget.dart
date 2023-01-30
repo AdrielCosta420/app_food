@@ -80,16 +80,25 @@ class OpcoesCardapioWidget extends StatelessWidget {
                                     ),
                                   ),
                                 ),
+                                const SizedBox(height: 10),
                                 Text(
                                   cardapio.litteDescription,
                                   style: const TextStyle(
                                     color: Colors.black,
                                     fontSize: 15,
+                                    fontWeight: FontWeight.w500,
                                   ),
                                 ),
+                                const SizedBox(height: 10),
 
                                 //Text(cardapio.description),
-                                Text(cardapio.price)
+                                Text(
+                                  cardapio.price,
+                                  style: const TextStyle(
+                                    color: colorGreen,
+                                    fontWeight: FontWeight.w700,
+                                  ),
+                                )
                               ],
                             ),
                           ],

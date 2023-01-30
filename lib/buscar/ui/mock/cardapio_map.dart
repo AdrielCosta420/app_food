@@ -6,7 +6,7 @@ List<Map<String, dynamic>> listaCardapioMapMock = [
     "description":
         "Feita com ingredientes vegetais como vegetais frescos, cogumelos, tomates, ervas e especiarias, e pode ser coberta com queijo vegano. A massa da pizza é feita com farinha de trigo ou outros tipos de farinha.",
     "price": "R\$ 79.90",
-    "litteDescription": "Depois eu faço,\nto com preguiça"
+    "litteDescription": "Pensando em você que\nama uma boa pizza vegana."
   },
   {
     "title": "Spaghetiti de pupunha",
@@ -63,6 +63,6 @@ List<Map<String, dynamic>> listaCardapioMapMock = [
         "Feito com ingredientes vegetais de alta qualidade e tem um sabor e textura incrivelmente parecido com o camarão verdadeiro. Uma opção saudável e saborosa sem produtos de origem animal. Contém proteínas vegetais, amido de batata, óleo vegetal, e ervas e especiarias!",
     "price": "R\$ 64,90",
     "litteDescription":
-        "Camarão com Brócolis de\nalta qualidade,\ncom um sabor\ndiferenciado\nfeito com ingredientes especiais!"
+        "Camarão com Brócolis de\nalta qualidade, com um\nsabor diferenciado feito\ncom ingredientes especiais!"
   }
 ];

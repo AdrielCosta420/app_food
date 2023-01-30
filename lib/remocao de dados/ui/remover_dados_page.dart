@@ -1,6 +1,9 @@
-import 'package:burguer_app/constants/color_constans.dart';
+import 'package:asuka/asuka.dart';
+
+import '../../constants/color_constans.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:another_flushbar/flushbar.dart';
 
 class RemoverDadosPage extends StatefulWidget {
   const RemoverDadosPage({Key? key}) : super(key: key);
@@ -8,6 +11,8 @@ class RemoverDadosPage extends StatefulWidget {
   @override
   State<RemoverDadosPage> createState() => _RemoverDadosPageState();
 }
+
+bool flushBarVisible = false;
 
 class _RemoverDadosPageState extends State<RemoverDadosPage> {
   @override
@@ -94,7 +99,12 @@ class _RemoverDadosPageState extends State<RemoverDadosPage> {
                   50,
                 ),
               ),
-              onPressed: () {},
+              onPressed: () {
+
+
+                AsukaSnackbar.alert('Solicitação da Remoção de Dados concluída').show();
+                Modular.to.pop();
+              },
               child: const Text(
                 'CONFIRMAR',
                 style: TextStyle(
